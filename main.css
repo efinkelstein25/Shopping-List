@@ -1,0 +1,26 @@
+html, body{
+	min-width: 950px;
+}
+
+ul{
+	list-style-type: none;
+	/*get this to work*/
+	color:red;
+}
+
+.done{
+	text-decoration: line-through;
+}
+
+.wholeList{
+	text-align: center;
+	background-color:yellow;
+}
+
+.check{
+	background-color: blue;
+	}
+
+.delete{
+	background-color: red;
+}
