@@ -20,17 +20,15 @@ $(document).keydown(function(){
 		$(this).parent().toggleClass('done');
 
 		/*var check = $(this);*/
-
-		if ($(this).text("")){
-			$(this).text("X").addClass(".checked");
-			if ($(this).hasClass("checked")){
-				$(this).text("");
-				$(this).removeClass("checked");
-			}
+		
+		if($(this).parent().hasClass('done')){
+			$(this).text("X");
+		} else {
+			$(this).text("");
 		}
-		/*else{
-			$(check).text("");
-		}*/
+
+
+		
 	});
 
 	/*click clear button*/

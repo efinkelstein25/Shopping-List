@@ -73,7 +73,7 @@ input{
 }
 
 .check{
-	background-color: blue;
+	/*background-color: blue;*/
 	/*border-radius: 8px;*/
 	/*background: url(checkmark.jpg) no-repeat fixed center;*/
 	background: white;
@@ -85,7 +85,7 @@ input{
 	padding: 2px;
 	line-height: 5px;
 	font-weight: bold;
-	
+
 	}
 
 .box{
