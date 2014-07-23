@@ -5,33 +5,50 @@ $(document).keydown(function(){
 		if(event.keyCode == 13)
 		{
 			addToList();
+			$('#listitem').val("");
 		}
 
 });
 
 /*click to delete item*/
-$('.delete').click(function(){
-	$(this).parent().remove();
-});
+	$(document).on('click', '.delete', function(){
+		$(this).parent().remove();
+	});
 
-/*crosses off if not crossed off, uncrosses if crossed off*/
-$('.check').click(function(){
-	$(this).parent().toggleClass("done");
+	/*crosses off if not crossed off, uncrosses if crossed off*/
+	$(document).on('click', '.check', function(){
+		$(this).parent().toggleClass('done');
+
+		/*var check = $(this);*/
+
+		if ($(this).text("")){
+			$(this).text("X").addClass(".checked");
+			if ($(this).hasClass("checked")){
+				$(this).text("");
+				$(this).removeClass("checked");
+			}
+		}
+		/*else{
+			$(check).text("");
+		}*/
+	});
+
+	/*click clear button*/
+	$(document).on('click', '.clear', function(){
+		clearDone();
+	});
+
 
 });
+/*end of document ready*/
 
-/*click clear button*/
-$('.clear').click(function(){
-	clearDone();
-});
-
-});
 
 /*adding value to list from textbox*/
 function addToList(){
 	/*saving value in textbox to variable*/
 	var item = $('#listitem').val();
-	$('.shopping').append("<li class=need> <button class = check name = check> Y </button>"+item+"<button class = delete name = delete> X </button></li>");
+	$('.shopping').append("<li class=need> <button class = check name = check> </button>"+item+"<button class = delete name = delete> X </button></li>");
+	/*$('.shopping').append("<li class=need> <div class = check> </div>"+item+"<button class = delete name = delete> X </button></li>");*/
 }
 
 /*clears any crossed off list items*/
